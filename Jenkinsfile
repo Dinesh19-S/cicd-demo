@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t cicd-demo:latest .'
+                bat 'docker build -t cicd-demo:latest .'
             }
         }
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 cicd-demo:latest'
+                bat 'docker run -d -p 3000:3000 cicd-demo:latest'
             }
         }
     }
