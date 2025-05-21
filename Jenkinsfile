@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/Dinesh19-S/cicd-demo.git'
+    stage('Clone') {
+    steps {
+        git branch: 'main', credentialsId: 'git-HuB', url: 'https://github.com/Dinesh19-S/cicd-demo.git'
+    }
+}
             }
         }
 
